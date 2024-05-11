@@ -1,0 +1,35 @@
+.content-container {
+  margin: 10px;
+  position: relative;
+  height: 100%;
+  .dialog-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .title {
+      color: #1e2b72;
+      margin-top: 15px;
+      font-weight: bold;
+      font-size: 16px;
+    }
+  }
+
+  .close-button {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+  }
+
+  .save-button {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(92, 111, 222, 1);
+    color: rgba(255, 255, 255, 1);
+    height: 30px;
+    width: 150px;
+    border: none;
+    border-radius: 5px;
+  }
+}

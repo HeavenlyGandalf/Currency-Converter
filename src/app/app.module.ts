@@ -1,18 +1,29 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { MaterialModule } from './material.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { provideHttpClient } from '@angular/common/http';
+import { CurrencyItemComponent } from './currency-item/currency-item.component';
+import { CurrencyListComponent } from './currency-list/currency-list.component';
+import { AddCurrencyComponent } from './add-currency/add-currency.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CurrencyListComponent,
+    CurrencyItemComponent,
+    AddCurrencyComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
+  imports: [BrowserModule, AppRoutingModule, MaterialModule],
+  providers: [
+    provideAnimationsAsync(),
+    provideHttpClient(),
+    ReactiveFormsModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports: [MaterialModule],
 })
-export class AppModule { }
+export class AppModule {}

@@ -1,0 +1,14 @@
+<div class="currency">
+  <div class="currency-name">{{ currency.name }}</div>
+  <div class="currency-info">
+    <div class="currency-value">{{ currency.value }}</div>
+    <div
+      class="currency-difference"
+      [class.positive]="currency.difference > 0"
+      [class.negative]="currency.difference < 0"
+    >
+      {{ currency.difference }} <span *ngIf="currency.difference > 0">▲</span
+      ><span *ngIf="currency.difference < 0">▼</span>
+    </div>
+  </div>
+</div>

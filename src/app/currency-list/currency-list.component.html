@@ -1,0 +1,20 @@
+<main class="main">
+  <div class="title">
+    <h1>Currency RUB</h1>
+    <button
+      class="button-add"
+      matTooltip="Add"
+      aria-label="Add currency"
+      (click)="openAddCurrencyDialog()"
+    >
+      <mat-icon>add</mat-icon>
+    </button>
+  </div>
+  <div class="time">{{ getFormattedDate(data.timestamp) }}</div>
+  <div class="other-currencies">
+    <app-currency-item
+      *ngFor="let currency of currencies"
+      [currency]="currency"
+    ></app-currency-item>
+  </div>
+</main>
