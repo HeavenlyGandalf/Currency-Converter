@@ -1,0 +1,17 @@
+<div class="currency">
+  <div class="currency-name">{{ currency.name }}</div>
+  <div class="currency-info">
+    <div class="currency-value">{{ currency.currentValue }}</div>
+    <div
+      class="currency-difference"
+      [class.positive]="currency.difference > 0"
+      [class.negative]="currency.difference < 0"
+    >
+      <span class="arrow-up" *ngIf="currency.difference > 0">▲</span>
+      <span class="arrow-down" *ngIf="currency.difference < 0">▼</span>(<span
+        *ngIf="currency.difference > 0"
+        >+</span
+      >{{ currency.difference | number : "1.2-2" || "0.00" }})
+    </div>
+  </div>
+</div>

@@ -1,0 +1,75 @@
+<main class="main">
+  <div class="subtitle">
+    <h2>Currency RUB</h2>
+    <div class="buttons">
+      <button
+        mat-mini-fab
+        color="primary"
+        class="button-add"
+        matTooltip="Add"
+        aria-label="Add currency"
+        (click)="openAddCurrencyDialog()"
+        title="Изменить список валют"
+      >
+        <mat-icon>create</mat-icon>
+      </button>
+      <button
+        *ngIf="!isIntervalRunning"
+        mat-mini-fab
+        color="primary"
+        matTooltip="Start"
+        aria-label="Start update currency"
+        (click)="startInterval()"
+        title="Начать обновлять валюты"
+      >
+        <mat-icon>play_arrow</mat-icon>
+      </button>
+      <button
+        *ngIf="isIntervalRunning"
+        mat-mini-fab
+        color="warn"
+        matTooltip="Stop"
+        aria-label="Stop update currency"
+        (click)="stopInterval()"
+        title="Остановить обновление валют"
+      >
+        <mat-icon>stop</mat-icon>
+      </button>
+      <button
+        mat-mini-fab
+        color="primary"
+        [matMenuTriggerFor]="menu"
+        title="Изменить периодичность обновления"
+      >
+        <mat-icon>access_time</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button
+          mat-menu-item
+          *ngFor="let interval of intervals"
+          [value]="interval.value"
+          (click)="selectInterval(interval.value)"
+          [title]="'Задать время обновления:' + interval.name"
+        >
+          <mat-radio-button [checked]="selectedInterval === interval.value">{{
+            interval.name
+          }}</mat-radio-button>
+        </button>
+      </mat-menu>
+    </div>
+  </div>
+  <div class="time-update">
+    <span class="date">{{ date }}</span>
+    <span class="time">{{ time }}</span>
+  </div>
+  <div class="container-loader" *ngIf="loading">
+    <span class="loader"></span>
+  </div>
+
+  <div class="other-currencies" *ngIf="!loading">
+    <app-currency-item
+      *ngFor="let currency of this.currencyService.currencies"
+      [currency]="currency"
+    ></app-currency-item>
+  </div>
+</main>

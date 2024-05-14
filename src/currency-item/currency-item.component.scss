@@ -1,0 +1,44 @@
+.currency {
+  display: flex;
+  width: 100%;
+  gap: 50px;
+  justify-content: space-between;
+
+  .currency-name {
+    color: #1e2b72;
+    font-weight: 500;
+    font-size: 16px;
+    align-self: center;
+    @media (max-width: 768px) {
+      font-size: 14px;
+    }
+    @media (min-width: 1024px) {
+      font-size: 26px;
+    }
+  }
+  .currency-info {
+    display: flex;
+    padding: 5px;
+    border: 2px solid #999;
+    height: 40px;
+    justify-content: space-between;
+    align-items: center;
+    width: 150px;
+    font-size: 16px;
+    @media (max-width: 768px) {
+      font-size: 14px;
+      height: 20px;
+    }
+    @media (min-width: 1024px) {
+      height: 50px;
+      font-size: 26px;
+      width: 300px;
+    }
+    .arrow-up {
+      color: rgb(117, 170, 119);
+    }
+    .arrow-down {
+      color: rgb(203, 104, 104);
+    }
+  }
+}

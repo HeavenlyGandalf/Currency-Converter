@@ -9,6 +9,6 @@ export interface CurrencyData {
 
 export interface Currency {
   name: string;
-  value: number;
+  currentValue: number;
   difference: number;
 }

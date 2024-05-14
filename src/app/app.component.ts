@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CurrencyService } from './currency.service';
+import { CurrencyService } from '../services/currency.service';
 
 @Component({
   selector: 'app-root',
@@ -8,4 +8,5 @@ import { CurrencyService } from './currency.service';
 })
 export class AppComponent {
   title = 'Currencies';
+  showReference: boolean = true;
 }

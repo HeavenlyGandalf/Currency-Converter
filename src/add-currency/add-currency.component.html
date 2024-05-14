@@ -1,0 +1,27 @@
+<div class="content-container">
+  <span class="dialog-header">
+    <span class="title">Изменить валюты</span>
+    <button class="close-button" (click)="closeDialog()">
+      <mat-icon aria-hidden="false" fontIcon="clear"></mat-icon>
+    </button>
+  </span>
+  <div>
+    <mat-checkbox
+      [indeterminate]="isSomeSelected()"
+      [checked]="selectedCurrencies.length === allCurrencies.length"
+      (change)="selectAll($event.checked)"
+    >
+      Выбрать все валюты
+    </mat-checkbox>
+  </div>
+  <div class="currencies-checkbox" *ngFor="let currency of allCurrencies">
+    <mat-checkbox
+      [value]="currency"
+      [checked]="isSelected(currency)"
+      (change)="toggleSelection($event.checked, currency)"
+    >
+      {{ currency }}
+    </mat-checkbox>
+  </div>
+  <button class="save-button" (click)="saveChange()">Сохранить</button>
+</div>
