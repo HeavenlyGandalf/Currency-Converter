@@ -1,4 +1,4 @@
 export const environment = {
   production: false,
-  apiKey: 'nKDcFKKHklXDu3MnoBsfrTbDrSAliqVJ',
+  ANGULAR_APP_API_KEY: 'nKDcFKKHklXDu3MnoBsfrTbDrSAliqVJ',
 };

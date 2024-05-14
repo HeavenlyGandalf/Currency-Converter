@@ -10,7 +10,7 @@ import { environment } from '../environments/environment';
 })
 export class CurrencyService {
   private apiUrl = 'https://api.apilayer.com/currency_data/live';
-  private apiKey = environment.apiKey;
+  private apiKey = environment.ANGULAR_APP_API_KEY;
 
   private timestamp: Date = new Date();
   private baseCurrency = 'RUB';
